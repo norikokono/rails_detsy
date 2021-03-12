@@ -1,0 +1,105 @@
+<h1 class="link animated bounce delay-2s" style="color: Azure">Detsy 🌼</h1>
+<div class="card-block special-card p-3 mb-5 rounded overflow-wrap" style="background-color: rgba(245, 245, 245, 0.4);">
+<div class='clearfix'>
+  <h1 class='float-left' style="color: Magenta";>
+
+  <%= image_tag @product.image  %>
+    <span class='badge badge-pill badge-info'>
+      <%= @product.id %>
+    </span>
+    <%= @product.title %>
+  </h1>
+  
+  <h1 class='float-right text-center'>
+    <% if @product.sale_price.present? && @product.sale_price < @product.price %>
+      <span class='badge badge-pill badge-secondary'><s><%= number_to_currency @product.price %></s></span>
+      <span class='badge badge-pill badge-danger'><%= number_to_currency @product.sale_price %></span>
+    <% else %>
+      <span class='badge badge-pill badge-secondary'><%= number_to_currency @product.price %></span>
+    <% end %>
+  </h1>
+</div>
+<h4 class='shadow-none p-3 rounded'><%= @product.description %></h4>
+<h6 class='text-muted'>
+  Posted by <em style="color: DarkMagenta"><%= @product.user.full_name %></em>
+</h6>
+
+<table>
+    <tbody>
+        <tr>    
+            <td><%= link_to "Add to Cart", add_to_cart_path(@product.id), method: :post, class: 'btn btn-info mr-auto'%></td>
+        </tr>
+    </tbody>
+</table>
+
+<hr/>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <%= button_to(
+    "Delete",
+    product_path(@product),
+    method: :delete,
+    class: 'btn btn-secondary',
+    data: { confirm: 'are you sure?' },
+    )
+  %> 
+  <%= link_to "Edit", edit_product_path(@product.id), method: :update, class: 'btn btn-info mr-auto'%>
+</div>
+
+<br><br>
+<div style="font-size: 20px;">
+  <% if @like.present? %>
+    <%= link_to(
+      "Un-Like",
+      like_path(@like),
+      method: :delete
+    )%>
+  <% else %>
+    <%= link_to(
+      "Like",
+      review_likes_path(@product),
+      method: :post
+    )%>
+  <% end %>
+</div>
+
+<div>
+  <%= @review.likes&.count %>
+</div>
+</div> 
+<h4 class='text-muted'>Please Leave a Review </h4>
+<div class="card-block special-card p-3 mb-5 rounded overflow-wrap" style="background-color: rgba(245, 245, 245, 0.4);">
+<%= form_with model: [@product, @review], local: true do |f| %>
+  <div class='form-group'>
+    <%= f.label :rating %>
+    <%= f.select(:rating, options_for_select(1..5), class: 'form-control' )%>
+  </div>
+  <div class='form-group'>
+    <%= f.label :body %>
+    <%= f.text_area(:body, class: 'form-control', placeholder: 'Your thoughts here' )%>
+  </div>
+  <%= f.submit class: 'btn btn-dark' %>
+<% end %>
+</div>
+
+<h5> Here's what people are saying: </h5>
+
+<% @product.reviews.each do |review| %>
+<div class="card-block special-card p-3 mb-5 rounded overflow-wrap" style="background-color: rgba(245, 245, 245, 0.4);">   
+  <h5>
+    <%= display_stars(review) %>
+    <p class='font-weight-lighter d-inline-block'> by <%= review.user.full_name %></p>
+    <br><%= review.body %>
+    <% if user_signed_in?  && can?(:crud, review)%>
+      <%= button_to(
+        "Delete",
+        review_path(review),
+        method: :delete,
+        class: 'btn btn-secondary float-right',
+        data: { confirm: 'delete this review?' }
+        )
+      %>  
+    <% end %>
+  </h5>
+</div>
+<% end %>

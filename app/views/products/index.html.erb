@@ -1,0 +1,23 @@
+<h1 class="link animated bounce delay-2s"><b>Detsy</b></h1>
+   
+<div  class="card-block special-card p-3 rounded col-mb-3" style="background-color: rgba(245, 245, 245, 0.4);">
+
+<% @products.each do |product| %>
+  <div class='card h-100 special-card'style="background-color: rgba(245, 245, 245, 0.4);">
+<%= link_to product do %>
+      <div class="card-header">
+        <h4 style="color: Magenta"><span class='badge badge-light'><%= product.id %></span> <%= product.title %></h4>
+        </div>
+        <div class="card-body">
+        <h5><%= product.description %></h5>
+        </div>
+        <div class="card-footer">
+        <h6 style="color: Orchid">$<%= product.price  %></h6>
+        <small style="color: MediumTurquoise">Last Updated: <%= time_ago_in_words product.updated_at %></small>
+        </div>
+     
+      </div>
+    <% end %>
+  <% end %>
+</div>
+</div>

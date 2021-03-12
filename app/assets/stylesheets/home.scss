@@ -1,0 +1,88 @@
+body, html {
+    height: 100%;
+    background-image:
+    linear-gradient(to bottom, rgba(239, 180, 245, 0.5), rgba(255, 0, 43, 0.5)),
+    url("https://images.pexels.com/photos/1470168/pexels-photo-1470168.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  }
+.parallax {
+    /* The image used */
+    background-image: url("https://images.pexels.com/photos/3631430/pexels-photo-3631430.jpeg?cs=srgb&dl=pexels-fiona-art-3631430.jpg&fm=jpg");
+    
+    /* Set a specific height */
+    min-height: 1000px;
+
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #header{
+    position: absolute;
+    z-index: 1000;
+    top: 200px;
+    left: 200px;
+  }
+  
+  .text-box{
+      height: 600px;
+      padding: 50px;
+  }
+  @media only screen and (max-device-width: 1024px) {
+      .parallax {
+          background-attachment: scroll;
+      }
+  }
+  
+  .navbar {
+      margin-bottom: 0 !important;
+  }
+  
+
+* {
+    font-family: 'Delius Swash Caps', cursive;
+    color:blueviolet;
+}
+
+
+
+#container {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+}
+
+.link .tip {
+  visibility: hidden;
+  width: 0;
+  height: 100px;
+  opacity: 0;
+  background-color: #008CBA;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+  transition: 0.5s ease;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.link:hover .tip {
+  visibility: visible;
+  width: 150px;
+  height: auto;
+  opacity: 1;
+}
+
+
+/*-------------------------------------------------*/ 

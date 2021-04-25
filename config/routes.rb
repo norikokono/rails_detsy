@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get("/about", to: "welcome#about")
   get("/contact_us", to: "welcome#contact_us")
   post("/thank_you", to: "welcome#thank_you")
-  post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
+  post '/add_to_cart/:product_id' => 'carts#add_to_cart', :as => 'add_to_cart'
 
   # Session Routes
   resource :session, only: [:new, :create]
@@ -21,6 +21,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
 
- 
 
 end

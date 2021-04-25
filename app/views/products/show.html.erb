@@ -1,4 +1,4 @@
-<h1 class="link animated bounce delay-2s" style="color: Azure">Detsy 🌼</h1>
+<h1 class="link animated bounce delay-2s" style="color: Azure">Detsy 🌼 </h1>
 <div class="card-block special-card p-3 mb-5 rounded overflow-wrap" style="background-color: rgba(245, 245, 245, 0.4);">
 <div class='clearfix'>
   <h1 class='float-left' style="color: Magenta";>
@@ -49,23 +49,22 @@
 <br><br>
 <div style="font-size: 20px;">
   <% if @like.present? %>
-    <%= link_to(
+    <%= button_to(
       "Un-Like",
       like_path(@like),
       method: :delete
     )%>
   <% else %>
-    <%= link_to(
+    <%= button_to(
       "Like",
       review_likes_path(@product),
       method: :post
     )%>
   <% end %>
 </div>
-
-<div>
-  <%= @review.likes&.count %>
-</div>
+  <div>
+    <%= @review.likes&.count %>
+  </div>
 </div> 
 <h4 class='text-muted'>Please Leave a Review </h4>
 <div class="card-block special-card p-3 mb-5 rounded overflow-wrap" style="background-color: rgba(245, 245, 245, 0.4);">
@@ -75,7 +74,7 @@
     <%= f.select(:rating, options_for_select(1..5), class: 'form-control' )%>
   </div>
   <div class='form-group'>
-    <%= f.label :body %>
+    <%= f.label :comment %>
     <%= f.text_area(:body, class: 'form-control', placeholder: 'Your thoughts here' )%>
   </div>
   <%= f.submit class: 'btn btn-dark' %>

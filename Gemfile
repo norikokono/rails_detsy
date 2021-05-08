@@ -37,7 +37,9 @@ gem 'animate.css-rails', '~> 3.2.0'
 gem 'active_model_serializers'
 gem 'rails_same_site_cookie'  # chrome is blocking cookies because we're not using https. This gem will set configurations on rails to allow cookies to still saved
 
+gem 'faker', '~> 2.11'
 
+gem "actionpack", ">= 6.1.3.2"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,7 +47,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
-  gem 'faker', '~> 2.11'
   gem 'rack-cors'
 
 end

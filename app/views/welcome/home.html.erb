@@ -5,8 +5,52 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap" rel="stylesheet">
 
+<style>
+#loader {
+    border: 12px solid;
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+</style>
+
 </head>
 <body>
+  <%# https://www.geeksforgeeks.org/how-to-show-page-loading-div-until-the-page-has-finished-loading/ %>
+    <div id="loader" class="center"></div>
+    <script>
+    document.onreadystatechange = function() {
+        if (document.readyState !== "complete") {
+            document.querySelector(
+              "body").style.visibility = "hidden";
+            document.querySelector(
+              "#loader").style.visibility = "visible";
+        } else {
+            document.querySelector(
+              "#loader").style.display = "none";
+            document.querySelector(
+              "body").style.visibility = "visible";
+        }
+    };
+    </script>
+
 <div id="container">
   <div class="link animated bounce delay-2s"><h1 style="color:white; font-weight:900; padding-left: 20px;">Detsy 🌼</h1>
     <span class="tip" style="background-color:MediumTurquoise; width:400px">

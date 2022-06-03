@@ -72,7 +72,7 @@ products = Product.all
 reviews = Review.all
 likes = Like.all
 
-puts Cowsay.say("Generated #{products.count} products with #{NUM_OF_REVIEWS} reviews each!", :sheep)
-puts Cowsay.say("Generated #{users.count}  users!", :turtle)
-puts Cowsay.say("Generated #{likes.count}  likes!", :bunny)
+# puts Cowsay.say("Generated #{products.count} products with #{NUM_OF_REVIEWS} reviews each!", :sheep)
+# puts Cowsay.say("Generated #{users.count}  users!", :turtle)
+# puts Cowsay.say("Generated #{likes.count}  likes!", :bunny)
 

@@ -82,6 +82,7 @@ GEM
     case_transform (0.2)
       activesupport
     concurrent-ruby (1.1.10)
+    cowsay (0.3.0)
     crass (1.0.6)
     diff-lcs (1.5.0)
     erubi (1.10.0)
@@ -246,6 +247,7 @@ DEPENDENCIES
   bootstrap (~> 4.5)
   byebug
   cancancan
+  cowsay (~> 0.3)
   factory_bot_rails
   faker (~> 2.11)
   font-awesome-sass (~> 5.12.0)

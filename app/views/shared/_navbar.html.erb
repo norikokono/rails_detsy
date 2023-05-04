@@ -1,0 +1,28 @@
+<nav class='navbar navbar-light bg-light mb-5'>
+    <a class="navbar-brand animated bounce faster" href="#"><h1 style="font-size:60px; paddin-left:20px;"><b style="color: black">Detsy 🌼</b></h1></a>
+
+  <ul>
+    <span class='navbar-brand mb-0 h1' style="font-weight: bold">
+      <%= link_to 'Home', home_path, class: 'button' %>
+      
+      <%= link_to 'View Products', products_path, class: 'button' %>
+      
+      <%= link_to 'Add Product', new_product_path, class: 'button' %>
+      
+      <%= link_to 'About', about_path, class: 'button' %>
+      
+      <%= link_to 'Contact Us', contact_us_path, class: 'button' %>
+    </span>
+  </ul>
+  <div>
+    <% if user_signed_in? %>
+      <span class='text-muted mr-3'>Hello, <%= current_user.full_name %></span>
+      <%= link_to 'Sign Out', logout_path %>
+    <% else %>
+      <%= link_to "Log In", new_session_path, class: 'btn btn-dark' %>
+  
+      <%= link_to "Sign Up", new_user_path, class: 'btn btn-dark'%>
+    <% end %>
+  </div>
+</nav>
+

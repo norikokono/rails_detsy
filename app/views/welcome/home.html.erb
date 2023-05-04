@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+
+<style>
+#loader {
+    border: 12px solid;
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+</style>
+
+</head>
+<body>
+  <%# https://www.geeksforgeeks.org/how-to-show-page-loading-div-until-the-page-has-finished-loading/ %>
+    <div id="loader" class="center"></div>
+    <script>
+    document.onreadystatechange = function() {
+        if (document.readyState !== "complete") {
+            document.querySelector(
+              "body").style.visibility = "hidden";
+            document.querySelector(
+              "#loader").style.visibility = "visible";
+        } else {
+            document.querySelector(
+              "#loader").style.display = "none";
+            document.querySelector(
+              "body").style.visibility = "visible";
+        }
+    };
+    </script>
+
+<div id="container">
+  <div class="link animated bounce delay-2s"><h1 style="color:white; font-weight:900; padding-left: 20px;">Detsy 🌼</h1>
+    <span class="tip" style="background-color:MediumTurquoise; width:400px">
+        Tom scottish fold and donskoy. <br><br>
+        Ragdoll bengal tiger and egyptian mau birman.<br><br>
+        Lion. Kitty panther siamese<br><br>
+        Ragdoll tomcat kitten siberian mouser kitten manx.  
+      </span>
+  </div>
+</div>
+<div class="parallax"></div>
+<div class="col-lg-12 text-box text-center">
+<div id="container">
+  <div class="link"><h1 style="font-weight:900">Detsy Detsy Detsy 🌼</h1><br><br>
+    <span class="tip" style="background-color:MediumTurquoise; width:400px">
+        Tom scottish fold and donskoy. <br><br>
+        Ragdoll bengal tiger and egyptian mau birman.<br><br>
+        Lion. Kitty panther siamese<br><br>
+        Ragdoll tomcat kitten siberian mouser kitten manx.  
+      </span>
+  </div>
+</div>
+<div class="parallax"></div>
+<div style="height:1000px;background-color:pink;font-size:36px">
+
+<div>
+  <div class="link"><h3 style="color:DimGrey">Licks paws 🌿</h3>
+  <span class="tip" style="background-color:MediumTurquoise; width:400px">
+          Tom scottish fold and donskoy. <br><br>
+          Ragdoll bengal tiger and egyptian mau birman.<br><br>
+          Lion. Kitty panther siamese<br><br>
+          Ragdoll tomcat kitten siberian mouser kitten manx.  
+        </span>
+  </div>
+
+<div class="link"><small style="color: DimGrey">Nyan fluffness ahh cucumber! scoot butt on the rug</small>
+  <h5 style="color: DimGrey">Walk on keyboard swat at dog lick sellotape and paw your face to wake you up in the morning for ooooh feather moving feather! scratch at the door then walk away as lick i the shoes. Love fish jump on human and sleep on her all night long be long in the bed, purr in the morning and then give a bite to every human around for not waking up request food, purr loud scratch the walls, the floor, the windows, the humans lick yarn hanging out of own butt. Flop over claw drapes, and catch small lizards, bring them into house, then unable to find them on carpet so drool throwup on your pillow, so chew the plant. Sniff sniff. Scream for no reason at 4 am where is it? i saw that bird i need to bring it home to mommy squirrel! but mewl for food at 4am.
+  </h5>
+  <h5 style="color: DimGrey">Make plans to dominate world and then take a nap mewl for food at 4am ptracy, but hate dogs so paw at beetle and eat it before it gets away or purr yet intently sniff hand. Hell is other people stand in front of the computer screen, and stick butt in face, and i can haz poop on floor and watch human clean up and cats woo. Hiss and stare at nothing then run suddenly away stare at imaginary bug or more napping, more napping all the napping is exhausting meowing chowing and wowing so you're just gonna scroll by without saying meowdy? steal mom's crouton while she is in the bathroom for is good you understand your place in my world. Furrier and even more furrier hairball hate dog. Go into a room to decide you didn't want to be in there anyway. So you're just gonna scroll by without saying meowdy? chew iPad power cord spot something, big eyes, big eyes, crouch, shake butt, prepare to pounce.</h5>
+  <span class="tip" style="background-color:MediumTurquoise; width:300px">
+          Tom scottish fold and donskoy. <br><br>
+          Ragdoll bengal tiger and egyptian mau birman.<br><br>
+          Lion. Kitty panther siamese<br><br>
+          Ragdoll tomcat kitten siberian mouser kitten manx.  
+        </span>
+
+
+  </div>
+  </div>
+</div>
+</div>
+
+<div id="container">
+  <div class="link"><h1 style="color:white; font-weight:900">Detsy 🌼</h1>
+    <span class="tip" style="background-color:MediumTurquoise; width:400px">
+        Tom scottish fold and donskoy. <br><br>
+        Ragdoll bengal tiger and egyptian mau birman.<br><br>
+        Lion. Kitty panther siamese<br><br>
+        Ragdoll tomcat kitten siberian mouser kitten manx.  
+      </span>
+  </div>
+</div>
+
+</body>
+</html>

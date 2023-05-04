@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detsy  🌼</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+
+    <%= favicon_link_tag asset_path('flower.ico') %>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flash_messages' %>
+    <div class='container'>
+      <%= yield %>
+    </div>  
+  </body>
+</html>

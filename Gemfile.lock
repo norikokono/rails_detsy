@@ -101,6 +101,12 @@ GEM
     ffi (1.15.5-java)
     ffi (1.15.5-x64-mingw32)
     ffi (1.15.5-x86-mingw32)
+    fly-ruby (0.5.1)
+      rack (~> 2.0)
+    fly.io-rails (0.3.5)
+      fly-ruby
+      nats-pure
+      toml
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
     globalid (1.1.0)
@@ -133,6 +139,7 @@ GEM
     minitest (5.18.0)
     msgpack (1.7.0)
     msgpack (1.7.0-java)
+    nats-pure (2.2.1)
     net-imap (0.3.4)
       date
       net-protocol
@@ -155,6 +162,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
+    parslet (2.0.0)
     pg (1.5.3)
     pg (1.5.3-x64-mingw32)
     pg (1.5.3-x86-mingw32)
@@ -255,8 +263,12 @@ GEM
     thor (1.2.1)
     tilt (2.1.0)
     timeout (0.3.2)
+    toml (0.3.0)
+      parslet (>= 1.8.0, < 3.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2023.3)
+      tzinfo (>= 1.0.0)
     user_agent_parser (2.15.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -295,6 +307,7 @@ DEPENDENCIES
   cowsay (~> 0.3)
   factory_bot_rails
   faker (~> 2.11)
+  fly.io-rails (~> 0.3.5)
   font-awesome-sass (~> 5.12.0)
   jbuilder (~> 2.7)
   jquery-rails

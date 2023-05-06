@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for detsy on 2023-05-06T15:02:38-07:00
+# fly.toml app configuration file generated for detsy on 2023-05-06T15:21:03-07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -18,3 +18,7 @@ primary_region = "sea"
 [[statics]]
   guest_path = "/rails/public"
   url_prefix = "/"
+
+[build]
+  [build.args]
+    RUBY_VERSION = "3.0.0"

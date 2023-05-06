@@ -257,8 +257,6 @@ GEM
     timeout (0.3.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2023.3)
-      tzinfo (>= 1.0.0)
     user_agent_parser (2.15.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -318,7 +316,7 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 3.0.1p64
+   ruby 3.0.0p0
 
 BUNDLED WITH
    2.2.15

@@ -2,7 +2,7 @@
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.0.0
-FROM ruby:$RUBY_VERSION-slim as base
+FROM quay.io/evl.ms/fullstaq-ruby:${RUBY_VERSION}-jemalloc-slim as base
 
 LABEL fly_launch_runtime="rails"
 
@@ -74,7 +74,10 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Run and own the application files as a non-root user for security
-RUN useradd rails --home /rails --shell /bin/bash
+ARG UID=1000 \
+    GID=1000
+RUN groupadd -f -g $GID rails && \
+    useradd -u $UID -g $GID rails --home /rails --shell /bin/bash
 USER rails:rails
 
 # Copy built artifacts: gems, application

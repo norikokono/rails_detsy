@@ -2,5 +2,8 @@
 
 ---
 options:
+  compose: true
+  fullstaq: true
+  jemalloc: true
   label:
     fly_launch_runtime: rails
